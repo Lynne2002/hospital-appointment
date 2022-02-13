@@ -1,0 +1,32 @@
+body{
+    background-image: url("/assets/Images/login.jpg");
+    background-color:blue;
+	background-size: cover;
+	background-position: center;
+	font-family: 'Raleway', cursive;
+   
+}
+.container .container{
+    background-color: transparent;
+    color:white;
+    width:700px;
+    height:570px;
+   border-style: outset;
+}
+.container{
+    background-color: transparent;
+}
+input[type="password"], [type="text"]{
+    width: 350px;
+    text-align: center;
+    height: 20px;
+    outline: none;
+    color: rgb(15, 164, 201);
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #fff;
+    }
+   
+    
