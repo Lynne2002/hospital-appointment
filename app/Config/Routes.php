@@ -36,21 +36,61 @@ $routes->get('/', 'Users::index', ['filter' => 'noauth']);
 $routes->get('logout', 'Users::logout');
 $routes->match(['get','post'],'register', 'Users::register', ['filter' => 'noauth']);
 $routes->match(['get','post'],'profile', 'Users::profile',['filter' => 'auth']);
-$routes->get('dashboard', 'Dashboard::index',['filter' => 'auth']);
+$routes->get('dashboard', 'Dashboard::index');
 
-$routes->get('roles', 'roles::index');
-$routes->get('role-add', 'roles::create');
-$routes->post('role-store', 'roles::store');
-$routes->get('role/edit/(:num)', 'roles::edit/$1');
-$routes->post('role/update/(:num)', 'roles::update/$1');
-$routes->get('role/delete/(:num)', 'roles::delete/$1');
 
-$routes->get('admin', 'CRUDController::index');
+
+$routes->get('admin', 'CRUDController::index', ['filter' => 'auth']);
 $routes->get('user-add', 'CRUDController::create');
 $routes->post('user-store', 'CRUDController::store');
 $routes->get('users/edit/(:num)','CRUDController::edit/$1');
 $routes->post('users/update/(:num)', 'CRUDController::update/$1');
 $routes->get('users/delete/(:num)', 'CRUDController::delete/$1');
+
+$routes->get('slider', 'sliderController::index');
+$routes->get('slider-add', 'sliderController::create');
+$routes->post('slider-store', 'sliderController::store');
+
+
+$routes->get('featured_homes', 'Home_featured::index');
+$routes->get('homes-add', 'Home_featured::create');
+$routes->post('homes-store', 'Home_featured::store');
+$routes->get('homes/edit/(:num)', 'Home_featured::edit/$1');
+$routes->post('homes/update/(:num)', 'Home_featured::update/$1');
+$routes->get('homes/delete/(:num)', 'Home_featured::delete/$1');
+
+$routes->get('agents', 'agentController::index');
+$routes->get('agents-add', 'agentController::create');
+$routes->post('agents-store', 'agentController::store');
+$routes->get('agents/edit/(:num)', 'agentController::edit/$1');
+$routes->post('agents/update/(:num)', 'agentController::update/$1');
+$routes->get('agents/delete/(:num)', 'agentController::delete/$1');
+
+$routes->post('houses-store', 'house_tour::store');
+
+
+
+
+$routes->get('seller-add', 'sellers::create', ['filter' => 'auth']);
+$routes->get('seller', 'sellers::create');
+$routes->post('seller-store', 'sellers::store');
+
+$routes->get('seller-files', 'sellers::create_2');
+$routes->post('files-store', 'upload_files::store');
+
+
+$routes->post('seller_homes-store', 'homes_uploads::store');
+
+$routes->get('sellersuccess','sellersuccessful::index' );
+
+$routes->get('property_add', 'properties::index');
+$routes->get('property_add-add', 'properties::create');
+$routes->post('property_add-store', 'properties::store');
+$routes->get('property_add/edit/(:num)', 'propertyies::edit/$1');
+$routes->post('property_add/update/(:num)', 'propertyies::update/$1');
+$routes->get('property_add/delete/(:num)', 'propertyies::delete/$1');
+
+$routes->get('rental', 'rental::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

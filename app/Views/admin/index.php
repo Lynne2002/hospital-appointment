@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/assets/css/dashboard.css">
     <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/ad0d310a4a.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="/assets/js/jquery-3.6.0.min.js"></script>
@@ -47,20 +48,21 @@
      
         <li>
           <a href="#" class="active">
-            <i class='bx bx-grid-alt' ></i>
+            <i class='bx bx-grid-alt'></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
+      
         <li>
-          <a href="roles">
-            <i class='bx bx-coin-stack' ></i>
-            <span class="links_name">Roles</span>
+          <a href="property_add">
+          <i class="fa-solid fa-house-chimney"></i>
+            <span class="links_name">Properties</span>
           </a>
         </li>
         <li>
-          <a href="categories">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">Categories</span>
+          <a href="featured_homes">
+          <i class="fa-solid fa-house-chimney-window"></i></i>
+            <span class="links_name">Featured properties</span>
           </a>
         </li>
         <li>
@@ -161,8 +163,8 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Email</th>
-        <th>Gender</th>
-        <th>Role</th>
+       
+        <th>User Type</th>
         <th>Action</th>
 </tr>
 </thead>
@@ -174,12 +176,12 @@
         <td><?=$row['first_name']?></td>
         <td><?=$row['last_name']?></td>
         <td><?=$row['email']?></td>
-        <td><?=$row['gender']?></td>
-        <td><?=$row['role']?></td>
+        <td><?=$row['registration_type']?></td>
+      
         
         <td>
-          <a href="<?= base_url('users/edit/'.$row['id'])?>" class="btn btn-success btn-sm">Edit</a>
-          <a href="<?=base_url('users/delete/'.$row['id'])?>" class="btn btn-danger btn-sm">Delete</a>
+          <a href="<?= base_url('users/edit/'.$row['user_id'])?>" class="btn btn-success btn-sm">Edit</a>
+          <a href="<?=base_url('users/delete/'.$row['user_id'])?>" class="btn btn-danger btn-sm">Delete</a>
 </td>
     
 </tr>

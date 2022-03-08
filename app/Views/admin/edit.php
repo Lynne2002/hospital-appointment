@@ -30,7 +30,7 @@
             <a href="<?=base_url('admin')?>" class="btn btn-danger float-end">BACK</a>
          </h2>
                
-               <form method="post" id="edit" action="<?=base_url('users/update/'.$users['id'])?>">
+               <form method="post" id="edit" action="<?=base_url('users/update/'.$users['user_id'])?>">
                
             <label>First Name: </label>
             <br>
@@ -93,24 +93,5 @@
     
 	
 	</body>
-  <script type="text/javascript">
-    $(document).ready(function()){
-        $('#button').click(function(e){
-            e.preventDefault();
-            $.ajax({
-               
-                method:"post",
-                url:"http://localhost/CRUDController",
-                data:$('#edit').serialize(),
-                dataType:"text",
-                success: function(response){
-                    $('#response').text(response);
-                    $("#response").html("<div class='alert alert-info'"+data+"/div");
-    
-                }
-        })
-        
-        })
-    });
-</script>
+  
 </html>

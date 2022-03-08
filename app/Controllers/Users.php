@@ -35,18 +35,16 @@ class Users extends BaseController
 				$this->setUserSession($user);
 			
 
-				if($user['role']==1){
+				if($user['registration_type']=="admin"){
 					return redirect()->to('admin');
 				}
-				else if($user['role']==2){
-				return redirect()->to('dashboard');
+				else if($user['registration_type']=="Buyer"){
+				return redirect()->to('properties');
 				}
-				else if($user['role']==3){
-					return redirect()->to('');
+				else if($user['registration_type']=="Seller"){
+					return redirect()->to ('seller');
 					}
-					else if($user['role']==4){
-						return redirect()->to('');
-						}
+				
 				
 
 			}
@@ -63,6 +61,7 @@ class Users extends BaseController
 			'first_name' => $user['first_name'],
 			'last_name' => $user['last_name'],
 			'email' => $user['email'],
+			'registration_type' => $user['registration_type'],
 			'isLoggedIn' => true,
 		];
 
@@ -94,6 +93,7 @@ class Users extends BaseController
 					'last_name' => $this->request->getVar('last_name'),
 					'email' => $this->request->getVar('email'),
 					'password' => $this->request->getVar('password'),
+					'registration_type' => $this->request->getVar('registration_type'),
 				];
 				$model->save($newData);
 				$session = session();
@@ -136,6 +136,7 @@ class Users extends BaseController
 					'user_id' => session()->get('user_id'),
 					'first_name' => $this->request->getPost('first_name'),
 					'last_name' => $this->request->getPost('last_name'),
+					'registration_type' => $this->request->getPost('registration_type'),
 					];
 					if($this->request->getPost('password') != ''){
 						$newData['password'] = $this->request->getPost('password');

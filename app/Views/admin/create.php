@@ -1,115 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/css/registration.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script src="/assets/js/jquery-3.6.0.min.js"></script>
-       <script src="/assets/js/popper.min.js"></script>
-       <script src="/assets/bootstrap.min.js"></script>
-       <title>Shop Haven</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/register.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title></title>
+    <style>
+      #registration_type option{
+        width:100%;
+      }
+      #registration_type{
+        width:100%;
+      }
+      </style>
 
-</head>
-<body background="/assets/Images/background.jpg">
+  </head>
+  <body>
+    <?php
+      $uri = service('uri');
+     ?>
 
-
-	
-		<div class="logo">
-					<img src="/assets/Images/logo.png">
-				</div>
-        
-        <div class="website">
-                    <h2 id="response"></h2></div>
-		<div class="Registration"id="create">
-			<h2>Add users</h2><br> 
-
-            <form method="post" id="create" action="<?=base_url('user-store')?>">
-			
-           
-            
-            
-            <label>First Name: </label>
-            <br>
-            <input type="text" name="first_name" id="name"placeholder="first name" value="">
-            <br><br>
-
-            <label>Last Name: </label>
-            <br>
-            <input type="text" name="last_name" id="last_name"placeholder="last name" value="">
-            <br><br>
-
-            <label>Email address: </label>
-            <br>
-            <input type="email" name="email" id="email"placeholder="Email address"value="">
-            <br><br>
-           <label>Gender:<label>
-               
-            <label class="radio">Male
-                      <input type="radio" checked="checked" name="gender" id="gender" value="male" />
-                      <span class="radiocheckmark"></span>
-                    </label>
-                    <label class="radio">Female
-                      <input type="radio" name="gender" value="female" />
-                      <span class="radiocheckmark"></span>
-                    </label>
-                <br><br>
-
-
-            <input type="hidden" name="role" id="role" value="1" />
-
-                
-            <label>Create password: </label>
-            <br>
-            <input type="password" name="password" id="password"placeholder="............................."value="">
-            <br><br>
-            <label>Confirm password: </label>
-            <br>
-            <input type="password" name="password_2" id="password_2"placeholder="............................."value="">
-            
-            
-            <br><br>
-
-            <?php if (isset($validation)):?>
-                <div class="col-12">
-                    <div class="alert alert-danger" role="alert">
-                        <?= $validation->listErrors()?>
+<div class="container">
+  <div class="row">
+   
+      <div class="container">
+        <h3>ADD ADMIN</h3>
+        <hr>
+        <form class="" action="<?=base_url('user-store')?>" method="post">
+          <div class="row">
+            <div class="col-12 ">
+              <div class="form-group">
+               <label for="firstname">First Name</label>
+               <input type="text" class="form-control" name="first_name" id="firstname" placeholder="First Name" value="">
+              </div>
             </div>
+            <div class="col-12 ">
+              <div class="form-group">
+               <label for="lastname">Last Name</label>
+               <input type="text" class="form-control" name="last_name" id="lastname"  placeholder="Last Name" value="">
+              </div>
             </div>
-            <?php endif;?>
+            <div class="col-12">
+              <div class="form-group">
+               <label for="email">Email address</label>
+               <input type="text" class="form-control" name="email" id="email"  placeholder="Email " value="">
+              </div>
+            </div>
 
-            <button  type="submit" class="button" name="button">Submit</button>
+            <input type="hidden" class="form-control" name="registration_type"  id="password_confirm" value="admin">
             
-	<br><br><br><br>
-			</form>
-	
-</table>
-		</div>
+            <div class="col-12 ">
+              <div class="form-group">
+               <label for="password">Password</label>
+               <input type="password" class="form-control" name="password"  placeholder="Enter Password" id="password" value="">
+             </div>
+           </div>
+           <div class="col-12">
+             <div class="form-group">
+              <label for="password_confirm">Confirm Password</label>
+              <input type="password" class="form-control" name="password_confirm"  placeholder="Confirm Password" id="password_confirm" value="">
+            </div>
+          </div>
+          <?php if (isset($validation)): ?>
+            <div class="col-12">
+              <div class="alert alert-danger" role="alert">
+                <?= $validation->listErrors() ?>
+              </div>
+            </div>
+          <?php endif; ?>
+          </div>
 
-    <script type="text/javascript">
-    $(document).ready(function()){
-        $('#button').click(function(e){
-            e.preventDefault();
-            $.ajax({
-               
-                method:"post",
-                url:"http://localhost/CRUDController",
-                data:$('#create').serialize(),
-                dataType:"text",
-                success: function(response){
-                    $('#response').text(response);
-                    $("#response").html("<div class='alert alert-info'"+data+"/div");
-    
-                }
-        })
-        
-        })
-    });
-</script>
-	
-	</body>
+          <div class="row">
+            <div class="col-12 col-sm-4">
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
 </html>
-
-
-
