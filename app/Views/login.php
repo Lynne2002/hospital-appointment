@@ -403,14 +403,14 @@ input[type="password"], [type="text"]{
         }
         }
         </script>
-</br></br></br></br></br></br>
+</br></br></br>
 
   <div class="container">
   <div class="row">
     
       <div class="container">
         <h3>Glen Homes Login</h3>
-        <hr></br></br>
+      
         <?php if (session()->get('success')): ?>
           <div class="alert alert-success" role="alert">
             <?= session()->get('success') ?>

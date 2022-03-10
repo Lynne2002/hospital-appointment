@@ -9,6 +9,41 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title></title>
     <style>
+      body{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/assets/Images/background_2.jpeg);
+    padding-top: 30vh;
+	background-size: cover;
+	background-position: center;
+	font-family: 'Raleway', cursive;
+   
+}
+.container .container{
+    background-color: transparent;
+    color:white;
+    width:700px;
+    height:700px;
+   border-style: outset;
+}
+.container{
+    background-color: transparent;
+}
+input[type="password"], [type="text"]{
+    width: 350px;
+    text-align: center;
+    height: 20px;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #fff;
+    }
+    input::placeholder {
+        color: white;
+        opacity: 1;
+      }
+    
       #registration_type option{
         width:100%;
       }

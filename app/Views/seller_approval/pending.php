@@ -98,7 +98,7 @@
         <div class="row">
            <div class="col-md-12">
            <div class="search-box">
-        <input onkeyup="myFunction()"  id ="myInput"type="text" placeholder="Search featured home">
+        <input onkeyup="myFunction()"  id ="myInput"type="text" placeholder="Search sub-category name">
         <i class='bx bx-search' ></i>
       </div>
       <br> <br>
@@ -109,8 +109,8 @@
                ?>
                    <div class="card">
                       <div class="card-header">
-                           <h5>Featured Homes</h5>
-                                <a href="<?= base_url('homes-add')?>" class="btn btn-primary btn-sm float-end">ADD HOME</a>
+                           <h5>Pending Sellers</h5>
+                                <a href="<?= base_url('property_add-add')?>" class="btn btn-primary btn-sm float-end">ADD HOME</a>
                               </h5>
                        </div>
                        <div class="card-body">
@@ -124,31 +124,26 @@
                                <th>Size</th>
                                <th>No. of bedrooms</th>
                                <th>No. of bathrooms</th>
+                               <th>Property type</th>
                                <th>Action</th>
             </tr>
 
             </thead>
             <tbody>
-                <?php foreach($homes as $item):?>
+                <?php foreach($sellers as $item):?>
             <tr>
                
-                <td><?=$item['location']?></td>
-                <td><?=$item['home_price']?></td>
-               <td>
-                  
-                   <img src="<?= "../uploads/".$item['home_image']; ?>" height="100px" width="100px"alt="Image">
-                </td>
-                <td><?=$item['address']?></td>
-                <td><?=$item['size']?></td>
-                <td><?=$item['bedrooms']?></td>
-                <td><?=$item['bathrooms']?></td>
+                <td><?=$item['first_name']?></td>
+                <td><?=$item['last_name']?></td>
+              
+                <td><?=$item['property_type']?></td>
+                <td><?=$item['legal']?></td>
+                <td><?=$item['status']?></td>
+                
                
                
-                <td>
-                    <a href="<?= base_url('homes/edit/'.$item['home_id'])?>"class="btn btn-success btn-sm">Edit</a></br>
-                    <a href="<?= base_url('homes/delete/'.$item['home_id'])?>"class="btn btn-danger btn-sm">Delete</a>
-                    
-                </td>
+               
+               
             </tr>
             <?php endforeach;?>
             </tbody>

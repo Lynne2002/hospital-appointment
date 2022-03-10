@@ -876,9 +876,8 @@ footer{
                             <li><a href="#" class="active">Home</a></li>
                             <li><a href="properties_view" target="_blank">Properties</a></li>
                             <li><a href="agents_view">Agents</a></li>
-                            <li><a href="#">About</a></li>
-                            
-                            <li><a href="#">Contact</a></li>
+                           
+                            <li><a href="contact">Contact Us</a></li>
                             <li><a href="users">Login</a></li>
                             <li id="close-flyout"><span class="fas fa-times"></span></li>
                         </ul>
@@ -917,7 +916,7 @@ footer{
     </p>
 
     <div>
-    <a href="featured_properties/index"><button type="button"><span></span>Buy a property</button></a>
+    <a href="<?=base_url('properties_view')?>"><button type="button"><span></span>Buy a property</button></a>
     <a href="<?=base_url('seller-add')?>"><button type="button"><span></span>Sell a property</button></a>
 
     </div>
@@ -1001,12 +1000,12 @@ footer{
     </select>
     <script>
         function mortgage(stateWrapper, ready) {
-            window.open("mortgage");
+            window.open("ttps://www.quickenloans.com/");
             ready();
         }
         
         function rental(stateWrapper, ready) {
-            window.open("rental");
+            window.open("properties_view");
             ready();
         }
     </script>
@@ -1045,7 +1044,7 @@ footer{
         }
         
         function rental(stateWrapper, ready) {
-            window.open("properties");
+            window.open("properties_view");
             ready();
         }
     </script>
@@ -1263,9 +1262,10 @@ footer{
                     <h3> <i class="fas fa-bed"></i> <?=$item['bedrooms']?> bedrooms </h3>
                     <h3> <i class="fas fa-bath"></i> <?=$item['bathrooms']?> bathrooms </h3>
                 </div>
+    </br>
                 <div class="buttons">
-                    <a href="#" class="btn btn-primary">request info</a>
-                    <a href="#" class="btn btn-primary">view details</a>
+                    <a href="house_tour" class="btn btn-primary">Request for a house tour</a>
+                   
                 </div>
             </div>
             

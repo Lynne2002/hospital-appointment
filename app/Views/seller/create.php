@@ -289,14 +289,14 @@
                                   </tbody>
                             </table>
                             <a class="item_anchor" name="ItemAnchor12"></a>
-                       <span class="question top_question">Are you buying or renting a property?
+                       <span class="question top_question">Are you selling or renting out a property?
                        <b class="icon_required" style="color:#FF0000">*</b>&nbsp;
                           </span>
                           <table class="inline_grid choices">
                                   <tbody><tr><td>
-                                      <input type="radio" name="property_type" class="multiple_choice" id="Yes" value="Yes">
+                                      <input type="radio" name="property_type" class="multiple_choice" id="Sell" value="Sell">
                                       <label for="Yes">Buy</label></td><td>
-                                          <input type="radio" name="property_type" class="multiple_choice" id="No" value="No">
+                                          <input type="radio" name="property_type" class="multiple_choice" id="Rent" value="Rent">
                                           <label for="No">Rent</label></td></tr>
                                   </tbody>
                             </table>

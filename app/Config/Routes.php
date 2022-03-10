@@ -66,10 +66,11 @@ $routes->get('agents/edit/(:num)', 'agentController::edit/$1');
 $routes->post('agents/update/(:num)', 'agentController::update/$1');
 $routes->get('agents/delete/(:num)', 'agentController::delete/$1');
 
-$routes->post('houses-store', 'house_tour::store');
 
 
 
+$routes->get('house_tour', 'houses_tour::index');
+$routes->post('house_tour-store', 'houses_tour::store');
 
 $routes->get('seller-add', 'sellers::create', ['filter' => 'auth']);
 $routes->get('seller', 'sellers::create');
@@ -78,10 +79,11 @@ $routes->post('seller-store', 'sellers::store');
 $routes->get('seller-files', 'sellers::create_2');
 $routes->post('files-store', 'upload_files::store');
 
-
+$routes->get('properties_view', 'properties_view::index', ['filter' => 'auth']);
 $routes->post('seller_homes-store', 'homes_uploads::store');
 
 $routes->get('sellersuccess','sellersuccessful::index' );
+$routes->get('buyersuccess','buyersuccess::index' );
 
 $routes->get('property_add', 'properties::index');
 $routes->get('property_add-add', 'properties::create');

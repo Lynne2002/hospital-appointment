@@ -39,7 +39,7 @@ class Users extends BaseController
 					return redirect()->to('admin');
 				}
 				else if($user['registration_type']=="Buyer"){
-				return redirect()->to('properties');
+				return redirect()->to('properties_view');
 				}
 				else if($user['registration_type']=="Seller"){
 					return redirect()->to ('seller');

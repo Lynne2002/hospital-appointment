@@ -66,48 +66,19 @@
           </a>
         </li>
         <li>
-          <a href="subcategories">
+          <a href="agents">
             <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Subcategories</span>
+            <span class="links_name">Agents</span>
           </a>
         </li>
         <li>
-          <a href="products">
+          <a href="seller_approval">
             <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Products</span>
+            <span class="links_name">Seller Applications</span>
           </a>
         </li>
       
-        <li>
-          <a href="payment_types">
-            <i class='bx bx-book-alt' ></i>
-            <span class="links_name">Payment Types</span>
-          </a>
-        </li>
-        <li>
-          <a href="purchaseHistory">
-            <i class='bx bx-user' ></i>
-            <span class="links_name">Orders Analytics</span>
-          </a>
-        </li>
-        <li>
-          <a href="viewmessage">
-            <i class='bx bx-message' ></i>
-            <span class="links_name">Messages</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-heart' ></i>
-            <span class="links_name">Favorites</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-cog' ></i>
-            <span class="links_name">Settings</span>
-          </a>
-        </li>
+        
         
       </ul>
   </div>

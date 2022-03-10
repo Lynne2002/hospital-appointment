@@ -98,7 +98,7 @@
         <div class="row">
            <div class="col-md-12">
            <div class="search-box">
-        <input onkeyup="myFunction()"  id ="myInput"type="text" placeholder="Search sub-category name">
+        <input onkeyup="myFunction()"  id ="myInput"type="text" placeholder="Search property">
         <i class='bx bx-search' ></i>
       </div>
       <br> <br>
@@ -109,7 +109,7 @@
                ?>
                    <div class="card">
                       <div class="card-header">
-                           <h5>Featured Homes</h5>
+                           <h5>Properties</h5>
                                 <a href="<?= base_url('property_add-add')?>" class="btn btn-primary btn-sm float-end">ADD HOME</a>
                               </h5>
                        </div>

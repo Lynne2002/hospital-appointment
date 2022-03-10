@@ -205,8 +205,8 @@
                 <h3> <i class="fas fa-bath"></i> <?=$item['bathrooms']?> bathrooms </h3>
             </div>
             <div class="buttons">
-                <a href="<?=base_url('property/request/'.$row['property_id'])?>" class="btn btn-primary">request info</a>
-                <a href="<?=base_url('property/view/'.$row['property_id'])?>" class="btn btn-primary">view details</a>
+                <a href="house_tour" class="btn btn-primary">Request for a house tour</a>
+              
             </div>
         </div>
         
