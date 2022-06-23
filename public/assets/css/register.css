@@ -1,36 +1,404 @@
-body{
-    background-image: url("/assets/Images/login.jpg");
-    background-color:blue;
-    padding-top: 30vh;
-	background-size: cover;
+:root{
+    --main-color:#009688;
+    --blue:#0000ff;
+    --blue-dark:#18293c;
+    --orange:#ffa500;
+    --green-yellow:#cddc39;
+    --pink-light:#efa2b4;
+    --cyan-light:#aef1ee;
+    --white:#ffffff;
+    --white-alpha-40:rgba(255,255,255, 0.40);
+    --white-alpha-25:rgba(255,255,255, 0.25);
+    --backdrop-filter-blur:blur(5px);
+
+
+}
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Raleway', cursive;
+    
+
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow:scroll;
+  background-size: cover;
 	background-position: center;
-	font-family: 'Raleway', cursive;
-   
 }
-.container .container{
-    background-color: transparent;
-    color:white;
-    width:700px;
-    height:570px;
-   border-style: outset;
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-.container{
-    background-color: transparent;
+
+.flex {
+    display: flex;
+    justify-content: space-between;
 }
-input[type="password"], [type="text"]{
-    width: 350px;
-    text-align: center;
-    height: 20px;
-    outline: none;
-    color: #fff;
-    font-size: 20px;
+    #header-hero-container {
+    min-height: 600px;
+    height: calc(100vh);
+    position: relative;
+}
+
+header {
     background: transparent;
-    border: none;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    background: transparent;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+        
+        
+
+}
+
+
+    @media (max-width: 991px) {
+    #logo {
+        top: 1px;
     }
-    input::placeholder {
-        color: white;
-        opacity: 1;
-      }
+
+    #nav-toggle {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        background: #fff;
+        right: -100%;
+        top: 0;
+        margin: 0;
+        padding: 2rem;
+        height: 100%;
+        width: 300px;
+        box-sizing: border-box;
+        box-shadow: 5px 0 10px 3px #999;
+    }
+
+    #close-flyout {
+        position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+        font-size: 30px;
+        color: #777;
+        cursor: pointer;
+        display: block;
+        line-height: 1;
+        margin: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+    }
+
+    nav ul li:first-child {
+        margin-top: 50px;
+    }
+    nav ul li a {
+        font-size: 20px;
+        color: #212529;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        color: #ff2b83;
+    }
+}
+
+#logo {
+    font-family: "Roboto", "Helvetica", "Sans-serif";
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    top: 4px;
+}
+
+.hamburger-menu {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 3px 5px;
+    width: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: none;
+}
+
+.hamburger-menu .strip {
+    display: block;
+    height: 1px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+#close-flyout {
+    display: none;
+}
+
+header ul li a {
+    color: #999;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header ul.is-sticky li a {
+    color: #000;
+}
+header ul li{
+    list-style: none;
+    display:inline-block;
+    margin:0 20px;
+    position:relative;
+
+
+}
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+header ul li::after{
+    content:'';
+    height:3px;
+    width:0;
+    background:#009688 ;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+header ul li:hover::after{
+    width:100%;
+}
+header ul li a:hover,
+header ul li a.active {
+    color: #fff;
+}
+
+header ul.is-sticky li a:hover,
+header ul.is-sticky li a.active {
+    color: #f69314;
+}
+
+
+header ul li a.active::after{
+    content:'';
+    height:3px;
+    width:100%;
+    background:#009688 ;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.banner{
+    width:100%;
+    height:100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/assets/Images/login.png);
+}
+
+.container{
+   
+    background-color: transparent;
+}
+
+
+   
+    .logo{
+        width:90px;
+        height:90px;
+        cursor:pointer;
+    }
+    .navbar{
+        width:85%;
+        margin:auto;
+        padding:35px 0;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar ul li{
+        list-style: none;
+        display:inline-block;
+        margin:0 20px;
+        position:relative;
+    
+    }
+    .navbar ul li a{
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .navbar ul li::after{
+        content:'';
+        height:3px;
+        width:0;
+        background:#009688 ;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+    .navbar ul li:hover::after{
+        width:100%;
+    }
+form {
+  width: 350px;
+  position: relative;
+  margin-left:450px;
+}
+
+form .form-field::before {
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  color: #888888;
+  content: " ";
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+form .form-field:nth-child(1)::before {
+  background-image: url(/assets/Images/user-icon.png);
+  width: 20px;
+  height: 20px;
+  top: 15px;
+}
+form .form-field:nth-child(2)::before {
+  background-image: url(/assets/Images/user-icon.png);
+  width: 16px;
+  height: 16px;
+}
+form .form-field:nth-child(3)::before {
+    background-image: url(/assets/Images/user-icon.png);
+    width: 16px;
+    height: 16px;
+  }
+  form .form-field:nth-child(4)::before {
+    background-image: url(/assets/Images/lock-icon.png);
+    width: 16px;
+    height: 16px;
+  }
+  form .form-field:nth-child(5)::before {
+    background-image: url(/assets/Images/lock-icon.png);
+    width: 16px;
+    height: 16px;
+  }
+form .form-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+form input {
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  display: block;
+  padding: 0.9rem 0.7rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+  color: #4A4A4A;
+  text-indent: 40px;
+}
+form .btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.9rem 2.5rem;
+  text-align: center;
+  background-color: #009688;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+}
+form .btn:hover{
+    background-color: #69e8dc;
+}
+.page-loader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter-blur);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease;
+}
+.page-loader.fade-out{
+    opacity: 0;
+}
+.page-loader div{
+    border: 2px solid transparent;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    border-top-color: transparent !important;
+    border-bottom-color: transparent !important;
+    animation: spin 1s linear infinite;
+}
+.page-loader div:nth-child(1){
+    height:60px;
+    width: 60px;
+    border-color: var(--main-color);
+}
+.page-loader div:nth-child(2){
+    height:45px;
+    width: 45px;
+    border-color: var(--blue);
+    animation-duration: 1.2s;
+}
+.page-loader div:nth-child(3){
+    height:30px;
+    width: 30px;
+    border-color: var(--orange);
+}
+::-webkit-scrollbar{
+    width:5px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--white);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
     

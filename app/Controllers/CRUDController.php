@@ -4,15 +4,32 @@ use App\Models\UserModel;
 
 class CRUDController extends BaseController
 {
+	private $db;
+
+
+public function __construct()
+{
+  $this->db = db_connect();
+}
 	public function index()
 	{
+		
 		$users=  new UserModel();
         $data['users']=$users->findAll();
 
-	
 		echo view('admin/index.php', $data);
 		
 	}
+	public function join()
+{
+  echo "<pre>";
+  
+  //print_r($data);
+  //$data['mega_header'][] = (object) array('title' => 'product_image' 
+   // 'product_image' => '/public/uploads' );
+  $array = json_decode(json_encode($data), true);
+
+}
 	public function create(){
 		return view('admin/create');
 	}

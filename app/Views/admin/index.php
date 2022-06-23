@@ -140,23 +140,33 @@
 </tr>
 </thead>
 </tbody>
-</php>
-<?php foreach($users as $row):?>
-    <tr>
-       
-        <td><?=$row['first_name']?></td>
-        <td><?=$row['last_name']?></td>
-        <td><?=$row['email']?></td>
-        <td><?=$row['registration_type']?></td>
-      
+<tr>
+  <?php  
+
+  $rows=$users;
+  ?>
+ 
+<?php foreach ($rows as $row): ?>
+  
+  <?php foreach ($row as $key=>$value): 
+   
+?>
+<td><?php
+      echo $value;
+      ?>
+</td>
+<?php endforeach;?>
+</tr>
+<?php endforeach;?>
+
         
         <td>
-          <a href="<?= base_url('users/edit/'.$row['user_id'])?>" class="btn btn-success btn-sm">Edit</a>
-          <a href="<?=base_url('users/delete/'.$row['user_id'])?>" class="btn btn-danger btn-sm">Delete</a>
+          
+         
 </td>
     
 </tr>
-<?php endforeach;?>
+
                                                     </table>
 
                                             </div>
