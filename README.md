@@ -1,2 +1,2 @@
-# real_estate
- This is a real estate website created using codeigniter framework
+# hospital_appointment
+ This is a appointment scheduling website created using codeigniter framework
