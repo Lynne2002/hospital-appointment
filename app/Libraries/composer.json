@@ -1,0 +1,13 @@
+{
+    "name": "google/login",
+    "description": "google login with ci4",
+    "authors": [
+        {
+            "name": "Lynne2002",
+            "email": "lynnebebet2@gmail.com"
+        }
+    ],
+    "require": {
+        "google/apiclient": "2.7"
+    }
+}

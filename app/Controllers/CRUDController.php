@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\UserModel;
-
+use App\Models\doctorsModel;
 class CRUDController extends BaseController
 {
 	private $db;
@@ -16,6 +16,9 @@ public function __construct()
 		
 		$users=  new UserModel();
         $data['users']=$users->findAll();
+
+		$doctors=  new doctorsModel();
+        $data['doctors']=$doctors->findAll();
 
 		echo view('admin/index.php', $data);
 		

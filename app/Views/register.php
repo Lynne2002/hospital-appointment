@@ -220,7 +220,7 @@
         <div class="form-field">
             <button class="btn" type="submit">Sign up</button>
         </div>
-        <a href="/"><p style="text-align:center">Already have an account?</p></a>
+        <a href="/login"><p style="text-align:center">Already have an account?</p></a>
 </form>
       </div>
     </div>

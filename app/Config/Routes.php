@@ -32,11 +32,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-$routes->get('/', 'Users::index', ['filter' => 'noauth']);
+$routes->get('login', 'Users::index', ['filter' => 'noauth']);
 $routes->get('logout', 'Users::logout');
 $routes->match(['get','post'],'register', 'Users::register', ['filter' => 'noauth']);
 $routes->match(['get','post'],'profile', 'Users::profile',['filter' => 'auth']);
-$routes->get('home', 'homepage::index');
+$routes->get('home', 'homepage::index', ['filter' => 'noauth']);
 
 
 
@@ -47,53 +47,44 @@ $routes->get('users/edit/(:num)','CRUDController::edit/$1');
 $routes->post('users/update/(:num)', 'CRUDController::update/$1');
 $routes->get('users/delete/(:num)', 'CRUDController::delete/$1');
 
-$routes->get('slider', 'sliderController::index');
-$routes->get('slider-add', 'sliderController::create');
-$routes->post('slider-store', 'sliderController::store');
+$routes->get('adm', 'admController::index');
 
 
-$routes->get('featured_homes', 'Home_featured::index');
-$routes->get('homes-add', 'Home_featured::create');
-$routes->post('homes-store', 'Home_featured::store');
-$routes->get('homes/edit/(:num)', 'Home_featured::edit/$1');
-$routes->post('homes/update/(:num)', 'Home_featured::update/$1');
-$routes->get('homes/delete/(:num)', 'Home_featured::delete/$1');
+$routes->get('hospitals', 'hospitals::index');
+$routes->get('hospitals-add', 'hospitals::create');
+$routes->post('hospitals-store', 'hospitals::store');
+$routes->get('hospitals/edit/(:num)', 'hospitals::edit/$1');
+$routes->post('hospitals/update/(:num)', 'hospitals::update/$1');
+$routes->get('hospitals/delete/(:num)', 'hospitals::delete/$1');
 
-$routes->get('agents', 'agentController::index');
-$routes->get('agents-add', 'agentController::create');
-$routes->post('agents-store', 'agentController::store');
-$routes->get('agents/edit/(:num)', 'agentController::edit/$1');
-$routes->post('agents/update/(:num)', 'agentController::update/$1');
-$routes->get('agents/delete/(:num)', 'agentController::delete/$1');
-
+$routes->get('departments', 'departmentsController::index');
+$routes->get('department/add/(:num)', 'departmentsController::add/$1');
+$routes->post('departments-store', 'departmentsController::store');
+$routes->get('departments/edit/(:num)', 'departmentsController::edit/$1');
+$routes->get('departments/update/(:num)', 'departmentsController::update/$1');
+$routes->get('departments/delete/(:num)', 'departmentsController::delete/$1');
 
 
 
-$routes->get('house_tour', 'houses_tour::index');
-$routes->post('house_tour-store', 'houses_tour::store');
+$routes->get('location-store', 'nearest::store');
+$routes->post('nearest-store', 'nearest::index', ['filter' => 'auth']);
 
-$routes->get('seller-add', 'sellers::create', ['filter' => 'auth']);
-$routes->get('seller', 'sellers::create');
-$routes->post('seller-store', 'sellers::store');
+$routes->get('appointment/add/(:num)', 'bookAppointment::index/$1');
 
-$routes->get('seller-files', 'sellers::create_2');
-$routes->post('files-store', 'upload_files::store');
+$routes->get('doctors_add', 'adddoctorsController::index');
+$routes->get('doctors_add/add/(:num)', 'adddoctorsController::add/$1');
+$routes->post('doctors-store', 'adddoctorsController::store');
+$routes->get('doctors/edit/(:num)','adddoctorsController::edit/$1');
+$routes->post('doctors/update/(:num)', 'adddoctorsController::update/$1');
+$routes->get('doctors/delete/(:num)', 'adddoctorsController::delete/$1');
 
-$routes->get('properties_view', 'properties_view::index', ['filter' => 'auth']);
-$routes->post('seller_homes-store', 'homes_uploads::store');
+$routes->get('doctorlogin', 'doctor_login::index');
 
-$routes->get('sellersuccess','sellersuccessful::index' );
-$routes->get('buyersuccess','buyersuccess::index' );
 
-$routes->get('property_add', 'properties::index');
-$routes->get('property_add-add', 'properties::create');
-$routes->post('property_add-store', 'properties::store');
-$routes->get('property_add/edit/(:num)', 'propertyies::edit/$1');
-$routes->post('property_add/update/(:num)', 'propertyies::update/$1');
-$routes->get('property_add/delete/(:num)', 'propertyies::delete/$1');
 
-$routes->get('rental', 'rental::index');
+
 /*
+
  * --------------------------------------------------------------------
  * Additional Routing
  * --------------------------------------------------------------------

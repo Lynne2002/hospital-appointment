@@ -45,32 +45,7 @@
     <div></div>
 </div>
       <!--Page Loader Ends-->
-  <div class="banner">
-        
-        <div id="header-hero-container">
-                <header>
-                    <div class="flex container">
-                        <a id="logo" href="#">HOPITAL.</a>
-                        <nav>
-                            <button id="nav-toggle" class="hamburger-menu">
-                                <span class="strip"></span>
-                                <span class="strip"></span>
-                                <span class="strip"></span>
-                            </button>
-    
-                            <ul id="nav-menu">
-                                <li><a href="homepage" class="">Home</a></li>
-                              
-                                <li><a href="agents_view" target="_blank">About Us</a></li>
-                                <li><a href="contact" target="_blank">Contact Us</a></li>
-                                <li><a href="properties_view" target="_blank">Blogs</a></li>
-                                <a href="#"><button class="btn">Login<button></a>
-                                <a href="/register"><button class="btn">Register</button></a>
-                                <li id="close-flyout"><span class="fas fa-times"></span></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
+
     
     
     
@@ -81,8 +56,7 @@
 </br></br></br></br></br>
 
   
-        <h3 style=" color: white;
-    text-align:center;">User Login</h3>
+<h3 style=" color: white; text-align:center;">User Login</h3>
       </br></br>
         <?php if (session()->get('success')): ?>
           <div style="margin-left:25%;text-align:center;width:50%;" class="alert alert-success" role="alert">
@@ -92,7 +66,7 @@
   <?php $validation = \Config\Services::validation(); ?>
 
   
-    <form class="" action="/" method="post">
+    <form class="" action="/doctor_login/auth" method="post">
     
     <div style="width:350px; text-align:center;"  class="g-signin2" data-onsuccess="onSignIn"></div>
         <h3 style="text-align:center; color:white">OR</h3>
@@ -115,8 +89,7 @@
         <div class="form-field">
             <button class="btn" type="submit">Log in</button>
         </div>
-        <a href="/register"><p style=text-align:center;>Don't have an account yet?</p></a>
-        <a href="#" onclick="signOut();">Sign out</a>
+        
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();

@@ -5,12 +5,10 @@ class homepage extends BaseController
 {
 	public function index()
 	{
-		
-		
-       
 		echo view('home');
 		
 	}
+	
 
 	//--------------------------------------------------------------------
 

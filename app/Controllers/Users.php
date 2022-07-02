@@ -1,14 +1,33 @@
 <?php namespace App\Controllers;
 
 use App\Models\UserModel;
+use CodeIgniter\Controller;
 
 
 class Users extends BaseController
 {
+	private $userModel = NULL;
+	private $googleClient = NULL;
+	/* function _construct(){
+		require_once APPPATH. "Libraries/vendor/autoload.php";
+		$this->userModel = new UserModel();
+		$this->googleClient = new Google_Client();
+		$this->googleClient -> setClientId(" 1051702284649-2r5ptn3l1tp1fvbp1m4jssdr1sr8g4dp.apps.googleusercontent.com");
+		$this->googleClient -> setClientSecret("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");
+		$this->googleClient -> setRedirectUri("http://localhost");
+		$this->googleClient ->addScope("email");
+		$this->googleClient -> addScope("profile");
+
+	} */
 	public function index()
 	{
+		// $data['googleButton'] = '<a href="'.$this->googleClient->createAuthUrl().'" ><img src="public/uploads/google.png" alt="Login With Google" width="100%"></a>';
 		$data = [];
 		helper(['form']);
+		
+		//client ID - 1051702284649-2r5ptn3l1tp1fvbp1m4jssdr1sr8g4dp.apps.googleusercontent.com
+//CLIENT SECRET - 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
+
 
 
 		if ($this->request->getMethod() == 'post') {
@@ -159,6 +178,7 @@ class Users extends BaseController
 		session()->destroy();
 		return redirect()->to('/');
 	}
+	
 
 	//--------------------------------------------------------------------
 

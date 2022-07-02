@@ -22,7 +22,7 @@ $session = session('user');
        <title>Home</title>
 
     </head>
-    <body>
+    <body onload="getLocation()">
         
         
     <!--Page Loader Starts-->
@@ -65,7 +65,7 @@ $session = session('user');
 		                             <a href="<?=base_url('Users/logout')?>" class="btn btn-primary btn-sm float-end" style="right:0;">Logout</a>
                                 </div>
                                  <?php }else{ ?>
-                                    <a href="/"><button class="btn-a">Login<button></a>
+                                    <a href="/login"><button class="btn-a">Login<button></a>
                                      <a href="/register"><button class="btn-a">Register</button></a>
                                     <?php } ?>
                            
@@ -93,9 +93,17 @@ $session = session('user');
         document.getElementbyId("logo").style.fontSize = "35px";
     }
     }
-    </script>
-
-
+    
+      function getLocation(){
+        if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(showPosition);
+        }
+      }
+      function showPosition(position){
+        document.getElementById("lat").value=+position.coords.latitude;
+        document.getElementById("lng").value=+position.coords.longitude;
+      }
+      </script>
 
 
 
@@ -107,9 +115,16 @@ $session = session('user');
     In Hopital, you can search for the nearest hospital. <br>You can then schedule appointments accordingly.  
 </h3>
 
-    <div>
-    <a href=""><button class="btns" type="button"><span></span>Find nearest hospital</button></a>
-    
+
+             
+<div>
+
+<form action="<?=base_url('nearest-store')?>" method="POST">
+             <input type="hidden" name="lat" id="lat">
+             <input type="hidden" name="lng" id="lng">
+             <input type="hidden" value="<?= session()->get('user_id') ?>" name="user_id" id="user_id">
+       <button class="btns" name="submit" id="submit" type="submit"><span></span>Find nearest hospital</button>
+   </form>
     </div>
     </div>
     </div>

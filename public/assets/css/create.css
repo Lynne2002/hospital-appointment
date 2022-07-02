@@ -1,0 +1,36 @@
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/assets/Images/login.png);
+
+    padding-top: 30vh;
+	background-size: cover;
+	background-position: center;
+	font-family: 'Raleway', cursive;
+   
+}
+.container .container{
+    background-color: white;
+    color:black;
+    width:700px;
+    height:570px;
+   border-style: outset;
+}
+.container{
+    background-color: transparent;
+}
+input[type="password"], [type="text"]{
+    width: 350px;
+    text-align: center;
+    height: 20px;
+    outline: none;
+    color: black;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #fff;
+    }
+    input::placeholder {
+        color: white;
+        opacity: 1;
+      }
+    
