@@ -13,10 +13,11 @@ class appointmentsModel extends Model{
       'date_scheduled',
       'gender',
       'appointment_reason',
-      'added_by',
-      'appointment_description', 
       'hospital',
-      'added_by'
+      'patient_id',
+      'status',
+      'appointment_id'
+      
      
         
 

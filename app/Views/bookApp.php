@@ -91,31 +91,32 @@
 
 		<div class="wrapper" style="background-image: url('/assets/Images/bg-registration-form-2.jpg');">
 			<div class="inner">
-				<form action="">
+				<form action="<?=base_url('appointment-store')?>" method="post">
 					<h3 style="color:white; text-align:center;">WELCOME TO:</h3>
                     <h1 style="color:white; text-align:center;"><?=$hospitals['hospital_name']?></h1>
                      </br> </br> </br>
 					<div class="form-group">
 						<div class="form-wrapper">
 							<label for="">First Name</label>
-							<input type="text" class="form-control" name="first_name" value="<?= session()->get('first_name') ?>">
+							<input type="text" class="form-control" id="first_name" name="first_name" value="<?= session()->get('first_name') ?>">
 						</div>
 						<div class="form-wrapper">
 							<label for="">Last Name</label>
-							<input type="text" class="form-control" name="last_name" value="<?= session()->get('last_name') ?>">
+							<input type="text" class="form-control" id="last_name" name="last_name" value="<?= session()->get('last_name') ?>">
 						</div>
 					</div>
+          <input type="hidden" class="form-control" id="hospital" name="hospital" value="<?=$hospitals['hospital_id']?>">
 					<div class="form-wrapper">
 						<label for="">Email</label>
-						<input type="text" class="form-control"name="email" value="<?= session()->get('email') ?>">
+						<input type="text" class="form-control" id="email" name="email" value="<?= session()->get('email') ?>">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Preferred Appointment Date and time</label>
-						<input type="datetime-local" name="date_scheduled" class="form-control">
+						<input type="datetime-local" name="date_scheduled"  id="date_scheduled"class="form-control">
 					</div>
           <div class="form-wrapper">
 						<label for="">Phone number</label>
-						<input type="tel" name="phone" name="phone" class="form-control">
+						<input type="tel" name="phone" id="phone" class="form-control">
 					</div>
           
           <label for="">Gender:</label></br>
@@ -127,7 +128,8 @@
 						<input type="number" name="ID_No"  class="form-control">
 					</div>
                           
-          <input type="text" class="form-control"name="email" value="<?= session()->get('email') ?>">
+          <input type="hidden" class="form-control"name="patient_id" id="patient_id" value="<?= session()->get('user_id') ?>">
+          <input type="hidden" class="form-control" name="status" id="status">
 					
          <div class="form-wrapper">
 						<label for="">Reason for appointment</label>
