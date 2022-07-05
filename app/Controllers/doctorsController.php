@@ -7,19 +7,23 @@ use App\Models\appointmentsModel;
 class doctorsController extends Controller
 {
     public function index()
-    {
-        //$db = db_connect();
-        //$sched_query = $db->query("SELECT a.*FROM `appointments` a");
-        //$data['appointments'] = $sched_query->getResult('array');
-        //$sched_arr = json_encode($data['appointments']);
-        //$sched_query = $conn->query("SELECT a.*,p.name FROM `appointments` a");
-        //$sched_arr = json_encode($sched_query->fetch_all(MYSQLI_ASSOC));
-        echo view('doctor/index');
+    {    //$sched_arr = new appointmentsModel();
+        /*$db = db_connect();
+        $schedule_query = $db->query("SELECT a.* FROM appointments a inner join `users` u on a.patient_id = u.user_id");
+        //$sched_arr = json_encode($sched_query->getResult('array'));
+        //$data['schedule_array'] = $query->getResult('array');
+         $schedule_array = $schedule_query->getResult('array');
+         $data['schedule_array'] = $schedule_array;
+        json_encode($schedule_array);*/
+        $appointment = new appointmentsModel();
+        $data['appointment']=$appointment->findAll();
+
+        echo view('doctor/index', $data);
     } 
     function load()
  {
-    $event_data = new appointmentsModel();
-    $data['events']=$event_data->findAll();
+    $appointments = new appointmentsModel();
+    $data['events']=$appointments->findAll();
   
   
   echo json_encode($data);

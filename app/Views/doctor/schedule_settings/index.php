@@ -6,10 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/ad0d310a4a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ad0d310a4a.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/assets/styles.css">
+    <link rel= "stylesheet" href="/assets/css/calendar.css">
 </head>
 <body>
-<div class="col-lg-12">
+
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-h-plus-plus'></i>
+      <span class="logo_name">HOPITAL</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="doctor">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="#"class="active">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Schedule</span>
+          </a>
+        </li>
+        <li>
+          <a href="departments">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Appointments</span>
+          </a>
+        </li>
+        <li>
+          <a href="doctors_add">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Patients</span>
+          </a>
+        </li>
+       
+       
+       
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        
+       
+   
+      </ul>
+  </div>
+  <div style="margin-left:300px;" class="col-lg-8">
 	<div class="card card-outline card-primary">
 		<div class="card-header">
 			<h5 class="card-title">Clinic Schedule Settings</h5>

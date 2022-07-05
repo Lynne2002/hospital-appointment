@@ -11,6 +11,7 @@
         <script src="/assets/js/jquery-3.6.0.min.js"></script>
        <script src="/assets/js/popper.min.js"></script>
        <script src="/assets/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="/assets/css/dashboard.css">
     <style>
         .profile-details{
 		float:right;
@@ -87,30 +88,101 @@
   
 		      
 </head>
-<body background="/assets/Images/background.jpg">
-<div class="profile-details">
-        <img src="/assets/Images/avatar.png" alt="">
-        <span class="admin_name"><?= session()->get('first_name') ?>&nbsp;<?= session()->get('last_name') ?></span>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-h-plus-plus'></i>
+      <span class="logo_name">HOPITAL</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
        
-        <a href="<?=base_url('Users/logout')?>" class="btn btn-primary btn-sm float-end" style="right:0;">Logout</a>
-      </div>
-    <div class="container mt-4">
+        <li>
+          <a href="hospitals">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Hospitals</span>
+          </a>
+        </li>
+        <li>
+          <a href="departments">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Departments</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Doctors</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="#">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Emails</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Home Page</span>
+          </a>
+        </li>
+       
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    
+
+    <div style="margin-left:20px;" class="container mt-4">
         <div class="row">
            <div class="col-md-12">
-           <div class="search-box">
-        <input onkeyup="myFunction()"  id ="myInput"type="text" placeholder="Search doctor">
-        <i class='bx bx-search' ></i>
-      </div>
-      <br> <br>
+         
+      
                <?php
                if(session()->getFlashdata('status')){
                    echo "<h5>".session()->getFlashdata('status')."</h5>";
                }
                ?>
-                   <div  style="width:130%;" class="card">
+                   <div  style="width:100%;" class="card">
                       <div class="card-header">
-                           <h5>doctors</h5>
-                           <a href="<?= base_url('departments')?>" class="btn btn-danger btn-sm float-end">BACK</a>
+                      <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Doctors</span>
+      </div>
+      <div class="search-box">
+      <input onkeyup="myFunction()"  id ="myInput"type="text" placeholder="Search doctor">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="/assets/Images/avatar.png" alt="">
+        <span class="admin_name"><?= session()->get('first_name') ?>&nbsp;<?= session()->get('last_name') ?></span>
+       
+        <a href="<?=base_url('Users/logout')?>" class="btn btn-primary btn-sm float-end" style="right:0;">Logout</a>
+      </div>
+    </nav>
+              </br></br></br></br>
+                         
+                           <a href="<?= base_url('departments')?>" class="btn btn-danger btn-sm float-end">DEPARTMENTS</a>
                               </h5>
               
                       
@@ -118,6 +190,8 @@
                          
                        </div>
                        <div class="card-body">
+                     
+           
                        <table  id="myTable"class="table table-bordered">
                      <thead>
                           <tr>
@@ -160,6 +234,7 @@
              </div>
          </div>
     </div>
+                </section>
     </body>
     </html>
     <script>

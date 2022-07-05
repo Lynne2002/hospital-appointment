@@ -109,6 +109,30 @@ public function store(){
     return redirect()->to(base_url('homepage'))->with('status', 'appointment Added Successfully');*/
 }
 }
+public function view($id){
+	/*
+$appointments = new appointmentsModel();
+	
+		$data = [
+		'first_name' => $this->request->getVar('first_name'),
+		'last_name' => $this->request->getVar('last_name'),
+		'phone' => $this->request->getVar('phone'),
+		'email' => $this->request->getVar('email'),
+		'date_scheduled' => $this->request->getVar('date_scheduled'),
+		];
+	
+	
+  
+   $appointment_id=$this->request->getVar('appointment_id');
+   $model->find($appointment_id, $data);
+    return json_encode('appointments/details', $model);
+*/
+	$appointments = new appointmentsModel();
+  
+    $data['appointments']=$appointments->find($id);
+    return view('appointments/details', $data);
+
+}
 }
 
 

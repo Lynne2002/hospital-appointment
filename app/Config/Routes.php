@@ -71,6 +71,7 @@ $routes->post('nearest-store', 'nearest::index', ['filter' => 'auth']);
 
 $routes->get('appointment/add/(:num)', 'bookAppointment::index/$1');
 $routes->post('appointment-store', 'bookAppointment::store');
+$routes->get('appointments/view/(:num)', 'bookAppointment::view/$1');
 
 $routes->get('doctors_add', 'adddoctorsController::index');
 $routes->get('doctors_add/add/(:num)', 'adddoctorsController::add/$1');
@@ -82,14 +83,7 @@ $routes->get('doctors/delete/(:num)', 'adddoctorsController::delete/$1');
 $routes->get('doctorlogin', 'doctor_login::index');
 $routes->get('doctor', 'doctorsController::index');
 $routes->get('calendar-load', 'doctorsController::load');
-//...
 
-
-//...
-
-$routes->get("fullcalendar", "FullcalendarController::index");
-$routes->get("event", "FullcalendarController::loadData");
-$routes->post("eventAjax", "FullcalendarController::ajax");
 
 
 $routes->get('schedule', 'scheduleController::index');

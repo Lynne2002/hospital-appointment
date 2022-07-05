@@ -6,7 +6,7 @@
 	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
+     <link rel="stylesheet" href="/assets/css/dashboard.css">
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
         <script src="/assets/js/jquery-3.6.0.min.js"></script>
        <script src="/assets/js/popper.min.js"></script>
@@ -87,7 +87,70 @@
   
 		      
 </head>
-<body background="/assets/Images/background.jpg">
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-h-plus-plus'></i>
+      <span class="logo_name">HOPITAL</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="hospitals">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Hospitals</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Departments</span>
+          </a>
+        </li>
+        <li>
+          <a href="doctors_add">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Doctors</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="#">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Emails</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Home Page</span>
+          </a>
+        </li>
+       
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  
+      
+  <section class="home-section">
 <div class="profile-details">
         <img src="/assets/Images/avatar.png" alt="">
         <span class="admin_name"><?= session()->get('first_name') ?>&nbsp;<?= session()->get('last_name') ?></span>
@@ -110,7 +173,7 @@
                    <div  style="width:130%;" class="card">
                       <div class="card-header">
                            <h5>DEPARTMENTS</h5>
-                           <a href="<?= base_url('hospitals')?>" class="btn btn-danger btn-sm float-end">BACK</a>
+                           <a href="<?= base_url('hospitals')?>" class="btn btn-danger btn-sm float-end">HOSPITALS</a>
                               
                              </h5>
                        </div>
