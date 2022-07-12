@@ -32,6 +32,7 @@ class departmentsController extends BaseController {
         'department_name'=>$this->request->getPost('department_name'),
         'department_description'=>$this->request->getPost('department_description'),
         'hospital'=>$this->request->getPost('hospital'),
+        'added_by'=>$this->request->getPost('added_by'),
         
       
         
@@ -60,6 +61,7 @@ class departmentsController extends BaseController {
             'department_name'=>$this->request->getPost('department_name'),
             'hospital'=>$this->request->getPost('hospital'),
             'department_description'=>$this->request->getPost('department_description'),
+            'added_by'=>$this->request->getPost('added_by'),
        
             
         ];

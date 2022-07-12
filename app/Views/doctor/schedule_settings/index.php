@@ -34,13 +34,13 @@
           </a>
         </li>
         <li>
-          <a href="departments">
+          <a href="appointments">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">Appointments</span>
           </a>
         </li>
         <li>
-          <a href="doctors_add">
+          <a href="">
             <i class='bx bx-list-ul' ></i>
             <span class="links_name">Patients</span>
           </a>

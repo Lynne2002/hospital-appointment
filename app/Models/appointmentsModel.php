@@ -15,7 +15,6 @@ class appointmentsModel extends Model{
       'appointment_reason',
       'hospital',
       'patient_id',
-      'status',
       'appointment_id'
       
      

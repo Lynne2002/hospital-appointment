@@ -9,7 +9,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
  <link rel="stylesheet" href="/assets/css/login.css">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>\
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="1051702284649-2r5ptn3l1tp1fvbp1m4jssdr1sr8g4dp.apps.googleusercontent.com">
 
@@ -38,6 +38,7 @@
 
   </head>
   <body>
+
         <!--Page Loader Starts-->
 <div class="page-loader">
     <div></div>
@@ -55,8 +56,8 @@
 
 </br></br></br></br></br>
 
-  
-<h3 style=" color: white; text-align:center;">User Login</h3>
+  <div class="banner">
+<h3 style=" color: white; text-align:center;">Doctor Login</h3>
       </br></br>
         <?php if (session()->get('success')): ?>
           <div style="margin-left:25%;text-align:center;width:50%;" class="alert alert-success" role="alert">
@@ -90,17 +91,10 @@
             <button class="btn" type="submit">Log in</button>
         </div>
         
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
       </form>
      </div>
     </div>
+            </div>
  
           
           </body>

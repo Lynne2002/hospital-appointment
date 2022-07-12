@@ -8,18 +8,46 @@ $session = session('user');
     <head>
         <meta charset="utf-8">
     
-        <link rel="stylesheet" type="text/css" href="/assets/css/home.css">
+       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
         <script src="https://kit.fontawesome.com/ad0d310a4a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <script type="text/javascript" src="/Js/custom.js"></script>
-        <script type="text/javascript" src="/Js/jquery.convform.js"></script>
+        <script type="text/javascript" src="/assets/Js/custom.js"></script>
+        <script type="text/javascript" src="/assets/Js/jquery.convform.js"></script>
         <link rel="stylesheet" type="text/css" href="/assets/css/jquery.convform.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/css/index.css"/>
        <title>Home</title>
+       <style>
+        .chat_icon{
+    position:fixed;
+    right:30px;
+    bottom:0 px;
+    font-size:80px;
+    color: blue;
+    cursor: pointer;
+    z-index: 1000;
+}
+.chat_box{
+    position:fixed;
+    right:20px;
+    bottom:100px;
+    width:400px;
+    height:80vh;
+    background: #dedede;
+    z-index:1000;
+    transition:all 0.3s ease-out;
+    transform:scaleY(0);
+}
+.chat_box.active{
+    transform: scaleY(1)
+}
+.hidden{
+    display:none !important;
+}
+        </style>
 
     </head>
     <body onload="getLocation()">
@@ -82,17 +110,6 @@ $session = session('user');
         
 
     <script>
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementbyId("navbar").style.padding = "30px 10px" ;
-        document.getElementbyId("logo").style.fontSize = "25px";
-    } else {
-        document.getElementbyId("navbar").style.padding = "80px 10px";
-        document.getElementbyId("logo").style.fontSize = "35px";
-    }
-    }
     
       function getLocation(){
         if(navigator.geolocation){
@@ -107,17 +124,17 @@ $session = session('user');
 
 
 
+
     <div class="content">
    
 
     <h1>BOOK AN APPOINTMENT</h1>
     <h3>
     In Hopital, you can search for the nearest hospital. <br>You can then schedule appointments accordingly.  
-</h3>
-
-
+    </h3>
              
 <div>
+
 
 <form action="<?=base_url('nearest-store')?>" method="POST">
              <input type="hidden" name="lat" id="lat">
@@ -127,7 +144,115 @@ $session = session('user');
    </form>
     </div>
     </div>
+   
+   
     </div>
+   
+    
+
+    <div class="chat_icon">
+        <button onclick="playsound();"><img style="width: 100px;" src="/assets/Images/chatbot.png" aria-hidden="true"> </button>
+    </div>
+    <span id="sound"></span>
+    <!--chatbot-->
+    <div class="chat_box">
+    <div class="conv-form-wrapper">
+        <form action="" method="GET" class="hidden">
+        <select name="help" data-conv-question="Hello, how can I help you?">
+        <option value="Hospitals">I cannot get the nearest hospital</option>
+        
+    </select>
+    <div data-conv-fork="help">
+        <div data-conv-case="Hospitals">
+        <select name="log" data-conv-question="Have you registered and logged in to the website">
+                <option value="registered">Yes</option>
+                <option value="no_reg">No</option>
+            </select>
+        </div>
+       
+    </div>
+    <div data-conv-fork="log">
+        <div data-conv-case="registered">
+        <select name="thought" data-conv-question="Have you allowed us to access your location on your browser?">
+                <option value="access">Yes</option>
+                <option value="no_access">No</option>
+            </select>
+        </div>
+        <div data-conv-case="no_reg">
+        <select name="thought" data-conv-question="You need to be registered to find the nearest hospital. Pleasewait as we redirect you to the registration page.">
+                <option data-callback="register">Okay</option>
+                <option data-callback="chat">Still not satisfied? Chat with us</option>
+            </select>
+        </div>
+        <script>
+        
+        function chat(stateWrapper, ready) {
+            window.open("");
+            ready();
+        }
+        function register(stateWrapper, ready) {
+            window.open("/register");
+            ready();
+        }
+    </script>
+       
+    </div>
+
+
+    <div data-conv-fork="thought">
+    <div data-conv-case="no_access">
+            <select name="able" data-conv-question="Please enable location access on your browser,and try again. See the below tutorial to learn how to access location">
+            <option value="google" data-callback="tutorial">Okay</option>
+            <option value="bing" data-callback="chat">Need more help? Chat with us</option>
+            </select>
+            <script>
+        
+        function chat(stateWrapper, ready) {
+            window.open("");
+            ready();
+        }
+        function tutorial(stateWrapper, ready) {
+            window.open("https://docs.buddypunch.com/en/articles/919258-how-to-enable-location-services-for-chrome-safari-edge-and-android-ios-devices-gps-setting");
+            ready();
+        }
+    </script>
+            </div> 
+    <div data-conv-case="access">
+    <select name="able" data-conv-question="We are so sorry for the inconvenience! Please send an email with a description of the problem below">
+    <option value="google" data-callback="send_email">Send email</option>
+            <option value="bing" data-callback="chat">Need more help? Chat with us</option>
+            </select>
+            <script>
+        
+        function chat(stateWrapper, ready) {
+            window.open("");
+            ready();
+        }
+        function send_email(stateWrapper, ready) {
+            window.open("contact_us");
+            ready();
+        }
+    </script>
+
+    </div>
+      </div>
+   
+   
+
+
+      </form>
+    </div>
+    </div>
+    </br> </br>
+  
+  <script>
+   
+    function playsound(){
+    $('#sound').html('<audio autoplay><source src="/assets/sound/pop.mp3"></audio>');
+
+  
+    }
+    </script>
 
     <section class="features" id="features">
       <h2>Why Choose Us?</h2>

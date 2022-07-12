@@ -61,7 +61,7 @@ $routes->get('departments', 'departmentsController::index');
 $routes->get('department/add/(:num)', 'departmentsController::add/$1');
 $routes->post('departments-store', 'departmentsController::store');
 $routes->get('departments/edit/(:num)', 'departmentsController::edit/$1');
-$routes->get('departments/update/(:num)', 'departmentsController::update/$1');
+$routes->post('departments/update/(:num)', 'departmentsController::update/$1');
 $routes->get('departments/delete/(:num)', 'departmentsController::delete/$1');
 
 
@@ -84,10 +84,12 @@ $routes->get('doctorlogin', 'doctor_login::index');
 $routes->get('doctor', 'doctorsController::index');
 $routes->get('calendar-load', 'doctorsController::load');
 
-
+$routes->get('contact_us', 'contact::index');
 
 $routes->get('schedule', 'scheduleController::index');
 $routes->post('schedule-store', 'scheduleController::store');
+
+$routes->get('appointments', 'appointments::index');
 
 //...
 

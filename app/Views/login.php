@@ -116,15 +116,8 @@
             <button class="btn" type="submit">Log in</button>
         </div>
         <a href="/register"><p style=text-align:center;>Don't have an account yet?</p></a>
-        <a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
+      
+
       </form>
      </div>
     </div>

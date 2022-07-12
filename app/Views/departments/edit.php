@@ -91,8 +91,8 @@
                                    </div>
                                   
                                 
-                                    <input type="hidden" name="added_by" id="added_by"  value="<?=$hospital['hospital_id']?>">
-                                    <input type="hidden" name="hospital" id="hospital"  value="<?= session()->get('user_id') ?>">
+                                    <input type="hidden" name="added_by" id="added_by"  value="<?=session()->get('user_id')?>">
+                                    <input type="hidden" name="hospital" id="hospital"  value="<?=$hospital['hospital_id']?>">
                                          <div class="form-group">
                                                  <button type="submit" id="send_form" class="btn btn-primary px-4 float-end">SAVE</button>
                                         </div>

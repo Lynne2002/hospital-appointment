@@ -29,14 +29,14 @@ class doctor_login extends Controller
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/home');
+                return redirect()->to('/doctor');
             }else{
                 $session->setFlashdata('msg', 'Wrong Password');
-                return redirect()->to('/login');
+                return redirect()->to('doctorlogin');
             }
         }else{
             $session->setFlashdata('msg', 'Email not Found');
-            return redirect()->to('/login');
+            return redirect()->to('doctorlogin');
         }
     }
   
@@ -44,7 +44,7 @@ class doctor_login extends Controller
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('doctorlogin');
     }
 
 

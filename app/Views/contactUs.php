@@ -1,201 +1,166 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  outline: none;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 40px;
-  background: linear-gradient(115deg, #e28743 10%, #1587b9 90%);
-}
-.container{
-  max-width: 800px;
-  background: #fff;
-  width: 800px;
-  padding: 25px 40px 10px 40px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-.container .text{
-  text-align: center;
-  font-size: 35px;
-  font-weight: 600;
-  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.container form{
-  padding: 30px 0 0 0;
-}
-.container form .form-row{
-  display: flex;
-  margin: 32px 0;
-}
-form .form-row .input-data{
-  width: 100%;
-  height: 40px;
-  margin: 0 20px;
-  position: relative;
-}
-form .form-row .textarea{
-  height: 70px;
-}
-.input-data input,
-.textarea textarea{
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-  font-size: 17px;
-  border-bottom: 2px solid rgba(0,0,0, 0.12);
-}
-.input-data input:focus ~ label, .textarea textarea:focus ~ label,
-.input-data input:valid ~ label, .textarea textarea:valid ~ label{
-  transform: translateY(-20px);
-  font-size: 14px;
-  color: #3498db;
-}
-.textarea textarea{
-  resize: none;
-  padding-top: 10px;
-}
-.input-data label{
-  position: absolute;
-  pointer-events: none;
-  bottom: 10px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-.textarea label{
-  width: 100%;
-  bottom: 40px;
-  background: #fff;
-}
-.input-data .underline{
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  width: 100%;
-}
-.input-data .underline:before{
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 100%;
-  background: #3498db;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-}
-.input-data input:focus ~ .underline:before,
-.input-data input:valid ~ .underline:before,
-.textarea textarea:focus ~ .underline:before,
-.textarea textarea:valid ~ .underline:before{
-  transform: scale(1);
-}
-.submit-btn .input-data{
-  overflow: hidden;
-  height: 45px!important;
-  width: 25%!important;
-}
-.submit-btn .input-data .inner{
-  height: 100%;
-  width: 300%;
-  position: absolute;
-  left: -100%;
-  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
-  transition: all 0.4s;
-}
-.submit-btn .input-data:hover .inner{
-  left: 0;
-}
-.submit-btn .input-data input{
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-}
-@media (max-width: 700px) {
-  .container .text{
-    font-size: 30px;
-  }
-  .container form{
-    padding: 10px 0 0 0;
-  }
-  .container form .form-row{
-    display: block;
-  }
-  form .form-row .input-data{
-    margin: 35px 0!important;
-  }
-  .submit-btn .input-data{
-    width: 40%!important;
-  }
-}
-      </style>
-    <meta charset="utf-8">
-    <title>Contact Us Form </title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="container">
-      <div class="text">Contact Us Form</div>
-      <form method="post" action="contactus-store">
-        <div class="form-row">
-          <div class="input-data">
-            <input name="firstname" type="text" required>
-            <div class="underline"></div>
-            <label for="">First Name</label>
-          </div>
-          <div class="input-data">
-            <input name="lastname" type="text" required>
-            <div class="underline"></div>
-            <label for="">Last Name</label>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="input-data">
-            <input name="email" type="text" required>
-            <div class="underline"></div>
-            <label for="">Email Address</label>
-          </div>
-          <div class="input-data">
-            <input name="message" type="text" required>
-            <div class="underline"></div>
-            <label for="">Message title</label>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="input-data textarea">
-            <textarea name="description" rows="8" cols="80" required></textarea>
-            <div class="underline"></div>
-            <label for="">Write your message</label>
-          </div>
-        </div>
-        <div class="form-row submit-btn">
-          <div class="input-data">
-            <div class="inner"></div>
-            <input type="submit" value="submit">
-          </div>
-        </div>
-      </form>
-    </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-  </body>
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+outline: none;
+text-decoration: none;
+font-family: 'Open Sans', sans-serif;
+}
+
+body{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/assets/Images/login.png);
+background-size: cover;
+width: 100%;
+height: 100vh;
+}
+
+.wrapper{
+max-width: 720px;
+width: 100%;
+height: auto;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+padding: 20px 20px;
+box-shadow: -4px -4px 11px #c8c2c2a2,
+            4px 4px 9px rgba(147, 149, 151, 0.871);
+}
+
+.wrapper h2{
+color: #fff;
+text-align: center;
+margin-bottom: 30px;
+text-transform: uppercase;
+letter-spacing: 3px;
+}
+
+.wrapper .form .form_container{
+display: flex;
+justify-content: space-between;
+margin-bottom: 30px;
+}
+
+.wrapper .form .form_container .form_left,
+.wrapper .form .form_container .form_right{
+width: 48%;
+}
+
+.wrapper .form .input_field input[type="text"],
+.wrapper .form textarea{
+width: 100%;
+padding: 14px;
+border: none;
+border-radius: 5px;
+margin-bottom: 15px;
+border: 1.5px solid rgba(255, 255, 255, 0.438);
+border-radius: 3px;
+background: rgba(105, 105, 105, 0.25);
+color:white;
+}
+
+.wrapper .form textarea{
+height: 90%;
+resize: none;
+}
+
+.wrapper .form .btn{
+width: 200px;
+background: rgba(255, 255, 255, 0.164);
+backdrop-filter: blur(10px);
+margin: 0 auto;
+padding: 13px;
+font-size: 18px;
+border-radius: 4px;
+letter-spacing: 3px;
+text-align: center;
+}
+
+.wrapper .form .btn a{
+color: #fff;
+}
+.btns{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor:pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #009688;
+    height: 100%;
+    width:0;
+    border-radius: 25px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.btns:hover span{
+    width:100%
+}
+.btns:hover{
+    border:none;
+}
+
+@media screen and (max-width: 460px){
+.wrapper .form .form_container{
+  flex-direction: column;
+}
+.wrapper .form .form_container .form_left,
+.wrapper .form .form_container .form_right{
+  width: 100%;
+}
+.wrapper .form textarea{
+  height: 100px;
+}
+
+}
+
+  </style>
+</head>
+<body>
+  <form action="https://formspree.io/f/mjvlpkpg" method ="POST">
+  <div class="wrapper">
+    <h2>contact us form</h2>
+    <div class="form">
+      <div class="form_container">
+        <div class="form_left">
+        <div class="input_field">
+          <input type="text" name="Name" placeholder="Your Name*">
+        </div>
+        <div class="input_field">
+          <input type="text" name="Email" placeholder="Your Email*">
+        </div>
+        <div class="input_field">
+          <input type="text" name="Subject"  placeholder="Subject*">
+        </div>
+      </div>
+      <div class="form_right">
+        <textarea name="Message" placeholder="Your Message*"></textarea>
+      </div>
+      </div>
+      <button class="btns" name="submit" id="submit" type="submit"><span></span>SEND EMAIL</button>
+    </div>
+  </div>
+  </form>
+</body>
 </html>
