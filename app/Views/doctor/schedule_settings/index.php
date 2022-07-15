@@ -28,32 +28,54 @@
         </li>
        
         <li>
-          <a href="#"class="active">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">Schedule</span>
-          </a>
-        </li>
-        <li>
-          <a href="appointments">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Appointments</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
+          <a class href="#">
             <i class='bx bx-list-ul' ></i>
             <span class="links_name">Patients</span>
           </a>
+          <ul>
+            <li><a href="#"><i class='bx bx-box' ></i>
+                    <span style="font-size: 70%;" class="links_name">Web patients</span>
+               </a>
+            </li>
+           <li><a  href="ussdpatients"><i class='bx bx-box' ></i>
+                    <span style="font-size: 70%;" class="links_name">USSD patients</span>
+               </a>
+           </li>
+        </ul>
         </li>
-       
-       
-       
+</br></br></br></br>
+
+
         <li>
           <a href="#">
             <i class='bx bx-message' ></i>
             <span class="links_name">Messages</span>
           </a>
         </li>
+       
+       
+        <li>
+          <a class="active" href="displaySchedule">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Schedule</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Appointments</span>
+
+          </a>
+          <ul>
+      <li><a href="appointments"><i class='bx bx-box' ></i>
+            <span style="font-size: 70%;" class="links_name">Web appointments</span>
+           </a>
+      </li>
+      <li><a  href="#"><i class='bx bx-box' ></i>
+            <span style="font-size: 70%;" class="links_name">USSD appointments</span>
+          </a>
+        </li>
+         </ul>
         
        
    
@@ -62,7 +84,7 @@
   <div style="margin-left:300px;" class="col-lg-8">
 	<div class="card card-outline card-primary">
 		<div class="card-header">
-			<h5 class="card-title">Clinic Schedule Settings</h5>
+			<h5 class="card-title">Schedule Settings</h5>
 		</div>
 		<div class="card-body">
 			<form action="<?=base_url('schedule-store')?>" id="schedule_settings" method="post">

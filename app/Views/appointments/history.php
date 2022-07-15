@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+   
+  
     <script src="https://kit.fontawesome.com/ad0d310a4a.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ad0d310a4a.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -71,144 +71,247 @@
 
   
     <title>Document</title>
+    <style>
+        body{
+            background-color:grey;
+        }
+        header {
+    background: transparent;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    background: transparent;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+        
+        
+
+}
+@media (max-width: 991px) {
+    #logo {
+        top: 1px;
+    }
+
+    #nav-toggle {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        background: #fff;
+        right: -100%;
+        top: 0;
+        margin: 0;
+        padding: 2rem;
+        height: 100%;
+        width: 300px;
+        box-sizing: border-box;
+        box-shadow: 5px 0 10px 3px #999;
+    }
+
+    #close-flyout {
+        position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+        font-size: 30px;
+        color: #777;
+        cursor: pointer;
+        display: block;
+        line-height: 1;
+        margin: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+    }
+
+    nav ul li:first-child {
+        margin-top: 50px;
+    }
+    nav ul li a {
+        font-size: 20px;
+        color: #212529;
+    }
+
+    
+}
+
+#logo {
+    font-family: "Roboto", "Helvetica", "Sans-serif";
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    top: 4px;
+}
+
+.hamburger-menu {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 3px 5px;
+    width: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: none;
+}
+
+.hamburger-menu .strip {
+    display: block;
+    height: 1px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+#close-flyout {
+    display: none;
+}
+
+header ul li a {
+    color: #999;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header ul.is-sticky li a {
+    color: #000;
+}
+header ul li{
+    list-style: none;
+    display:inline-block;
+    margin:0 20px;
+    position:relative;
+
+
+}
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+header ul li::after{
+    content:'';
+    height:3px;
+    width:0;
+    background:#009688 ;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+header ul li:hover::after{
+    width:100%;
+}
+
+
+
+
+
+header ul li a.active::after{
+    content:'';
+    height:3px;
+    width:100%;
+    background:#009688 ;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.banner{
+    width:100%;
+    height:100vh;
+
+}
+.btn-a {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0.9rem 2.5rem;
+    text-align: center;
+    background-color: #009688;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    font-size: 17px;
+ 
+  }
+  .btn-a:hover{
+    background-color: #69e8dc;
+}
+a{
+    color:black;
+}
+
+        </style>
     
    	
       
-<?php
-$schedule_array=array();
-$db = db_connect();
-$sched_query = $db->query("SELECT a.* FROM appointments a inner join `users` u on a.patient_id = u.user_id");
-$schedule_array = json_encode($sched_query->getResult('array'));
-//var_dump($schedule_array);
 
-?>
   
 </head>
 <body>
 
 
-<div class="sidebar">
-    <div class="logo-details">
-      <i class='bx bxl-h-plus-plus'></i>
-      <span class="logo_name">HOPITAL</span>
-    </div>
-      <ul class="nav-links">
-        <li>
-          <a href="#" class="active">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="links_name">Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a class href="#">
-            <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Patients</span>
-          </a>
-          <ul>
-            <li><a href="patients"><i class='bx bx-box' ></i>
-                    <span style="font-size: 70%;" class="links_name">Web patients</span>
-               </a>
-            </li>
-           <li><a href="ussdpatients"><i class='bx bx-box' ></i>
-                    <span style="font-size: 70%;" class="links_name">USSD patients</span>
-               </a>
-           </li>
-        </ul>
-        </li>
-</br></br></br></br>
-        <li>
-          <a href="#">
-            <i class='bx bx-message' ></i>
-            <span class="links_name">Messages</span>
-          </a>
-        </li>
-       
-       
-        <li>
-          <a href="displaySchedule">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">Schedule</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Appointments</span>
-
-          </a>
-          <ul>
-      <li><a href="appointments"><i class='bx bx-box' ></i>
-            <span style="font-size: 70%;" class="links_name">Web appointments</span>
-           </a>
-      </li>
-      <li><a  href="#"><i class='bx bx-box' ></i>
-            <span style="font-size: 70%;" class="links_name">USSD appointments</span>
-          </a>
-        </li>
-        <ul>
-        </li>
+            <header>
+                <div class="flex container">
+                    <a id="logo" href="#">HOPITAL.</a>
+                    <nav>
+                        <button id="nav-toggle" class="hamburger-menu">
+                            <span class="strip"></span>
+                            <span class="strip"></span>
+                            <span class="strip"></span>
+                        </button>
+</br>
+                        <ul id="nav-menu">
+                            <li  ><a style="color:black;" href="../../home">&nbsp;&nbsp;Home</a></li>
+                            <li><a style="color:black;" href="#" class="active" target="_blank">My appointments</a></li>
+                            <li><a style="color:black;" href="">About Us</a></li>
+                           
+                            <li><a style="color:black;" href="../../contact">Contact Us</a></li>
+                            
+                                 <div class="profile-details">
+                                     <img src="/assets/Images/avatar.png" alt="">
+                                    <div class="admin_name"><?= session()->get('first_name') ?>&nbsp;<?= session()->get('last_name') ?></div>
+                                    <i class='bx bx-chevron-down' ></i>
+		                             <a href="<?=base_url('Users/logout')?>" class="btn btn-primary btn-sm float-end" style="right:0;">Logout</a>
+                                </div>
         
-       
+                           
+                           
+                            <li id="close-flyout"><span class="fas fa-times"></span></li>
+                        </ul>
+                    </nav>
+              
+            </header>
    
-      </ul>
-  </div>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
-        <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Doctor Dashboard</span>
-      </div>
-    
-      <div class="profile-details">
-        <img src="/assets/Images/avatar.png" alt="">
-        <span class="admin_name"><?= session()->get('first_name') ?>&nbsp;<?= session()->get('last_name') ?></span>
-       
-        <a href="<?=base_url('Users/logout')?>" class="btn btn-primary btn-sm float-end" style="right:0;">Logout</a>
-      </div>
-    </nav>
-    <div class="home-content">
-      <div class="overview-boxes">
         
-      
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Total Patients</div>
-            <div class="number">4</div>
-            <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
-            </div>
-          </div>
-          <i class='bx bxs-user user two'></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Approved Appointments</div>
-            <div class="number">3</div>
-            <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
-            </div>
-          </div>
-          <i class='bx bxs-calendar user three'></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Pending appointments</div>
-            <div class="number">1</div>
-            <div class="indicator">
-              <i class='bx bx-down-arrow-alt down'></i>
-              <span class="text">Down From Today</span>
-            </div>
-          </div>
-          <i class="bx bxs-calendar user four"></i>
-        </div>
-      </div>
+        
+                                 </br></br>  </br></br>  </br></br>
+   
+ 
+  
+        
 
 
 
 
-
+<h2 style="text-align:center;">MY APPOINTMENTS</h2>
 <div class="container">
   <div class="card">
     <div class="card-body">
@@ -216,6 +319,7 @@ $schedule_array = json_encode($sched_query->getResult('array'));
     </div>
   </div>
 </div>
+
 
 <script>
   <?php foreach($appointment as $item):?>
@@ -230,7 +334,7 @@ $schedule_array = json_encode($sched_query->getResult('array'));
         var d    = date.getDate(),
             m    = date.getMonth(),
             y    = date.getFullYear()
-        var scheds = $.parseJSON('<?= $schedule_array; ?>');
+        var scheds = $.parseJSON('<?= $appointments; ?>');
 
         var calendarEl = document.getElementById('calendar');
 
@@ -259,7 +363,7 @@ $schedule_array = json_encode($sched_query->getResult('array'));
                                 console.log(bg)
                                 events.push({
                                     id          : scheds[k].appointment_id,
-                                    title          : scheds[k].first_name+' '+scheds[k].last_name,
+                                    title          : scheds[k].status,
                                     start          : moment(scheds[k].date_scheduled).format('YYYY-MM-DD[T]HH:mm'),
                                     backgroundColor: bg, 
                                     borderColor: bg, 
@@ -294,8 +398,12 @@ $schedule_array = json_encode($sched_query->getResult('array'));
     })
     <?php endforeach?>
 </script>
-          </div>
-        </section>
+</div>
+</div> 
+</div>
+</div>
+</section>
+
         <!-- /.content -->
   <div class="modal fade" id="confirm_modal" role='dialog'>
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
@@ -469,24 +577,51 @@ $schedule_array = json_encode($sched_query->getResult('array'));
     <div class="jqvmap-label" style="display: none; left: 1093.83px; top: 394.361px;">Idaho</div>  </body>
 </html>
 </body>
+<script>
+     $(function () {
+                let headerElem = $('header');
+                let logo = $('#logo');
+                let navMenu = $('#nav-menu');
+                let navToggle = $('#nav-toggle');
 
+            
 
+            navToggle.on('click', () => {
+                navMenu.css('right', '0');
+            });
 
+            $('#close-flyout').on('click', () => {
+                    navMenu.css('right', '-100%');
+            });
 
+            $(document).on('click', (e) => {
+                let target = $(e.target);
+                if (!(target.closest('#nav-toggle').length > 0 || target.closest('#nav-menu').length > 0)) {
+                    navMenu.css('right', '-100%');
+                }
+            });
 
+            $(document).scroll(() => {
+                let scrollTop = $(document).scrollTop();
 
+                if (scrollTop > 0) {
+                    navMenu.addClass('is-sticky');
+                    logo.css('color', '#000');
+                    headerElem.css('background', '#fff');
+                    navToggle.css('border-color', '#000');
+                    navToggle.find('.strip').css('background-color', '#000');
+                } else {
+                    navMenu.removeClass('is-sticky');
+                    logo.css('color', '#fff');
+                    headerElem.css('background', 'transparent');
+                    navToggle.css('bordre-color', '#fff');
+                    navToggle.find('.strip').css('background-color', '#fff');
+                }
 
+                headerElem.css(scrollTop >= 200 ? {'padding': '0.5rem', 'box-shadow': '0 -4px 10px 1px #999'} : {'padding': '1rem 0', 'box-shadow': 'none' });
+            });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            $(document).trigger('scroll');
+            });
+   
+        </script>

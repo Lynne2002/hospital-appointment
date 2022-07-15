@@ -64,7 +64,7 @@ public function reject($patient_id){
 	$add_to_db = mysqli_query($conn,"UPDATE appointments SET status='Rejected' WHERE patient_id=$patient_id");
 
 				if($add_to_db){	
-					return redirect()->to('appointments')->with('status','Home added successfully');
+					return redirect()->to('appointments')->with('status','Appointment added successfully');
 				}
 				else{
 					echo "Query Error : " . "UPDATE appointments SET status='Rejected' WHERE patient_id=$patient_id" . "<br>" . mysqli_error($conn);

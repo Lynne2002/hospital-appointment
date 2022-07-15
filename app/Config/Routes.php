@@ -73,6 +73,8 @@ $routes->get('appointment/add/(:num)', 'bookAppointment::index/$1');
 $routes->post('appointment-store', 'bookAppointment::store');
 $routes->get('appointments/view/(:num)', 'bookAppointment::view/$1');
 
+$routes->get('appointments/history/(:num)', 'appHistory::index/$1',['filter' => 'auth']);
+
 $routes->get('doctors_add', 'adddoctorsController::index');
 $routes->get('doctors_add/add/(:num)', 'adddoctorsController::add/$1');
 $routes->post('doctors-store', 'adddoctorsController::store');
@@ -88,8 +90,15 @@ $routes->get('contact_us', 'contact::index');
 
 $routes->get('schedule', 'scheduleController::index');
 $routes->post('schedule-store', 'scheduleController::store');
+$routes->get('displaySchedule', 'scheduleDisplay::index');
 
 $routes->get('appointments', 'appointments::index');
+$routes->get('appointmentsussd', 'ussdappointments::index');
+
+$routes->get('patients', 'patientsController::index');
+$routes->get('ussdpatients', 'ussdPatients::index');
+
+
 
 //...
 

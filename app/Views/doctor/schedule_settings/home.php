@@ -157,7 +157,7 @@ i{
             <span class="links_name">Patients</span>
           </a>
           <ul>
-            <li><a href="#"><i class='bx bx-box' ></i>
+            <li><a  href="patients"><i class='bx bx-box' ></i>
                     <span style="font-size: 70%;" class="links_name">Web patients</span>
                </a>
             </li>
@@ -168,6 +168,8 @@ i{
         </ul>
         </li>
 </br></br></br></br>
+
+
         <li>
           <a href="#">
             <i class='bx bx-message' ></i>
@@ -177,27 +179,27 @@ i{
        
        
         <li>
-          <a href="displaySchedule">
+          <a class="active" href="#">
             <i class='bx bx-box' ></i>
             <span class="links_name">Schedule</span>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">Appointments</span>
 
           </a>
           <ul>
-      <li><a class="active"  href="#"><i class='bx bx-box' ></i>
+      <li><a href="appointments"><i class='bx bx-box' ></i>
             <span style="font-size: 70%;" class="links_name">Web appointments</span>
            </a>
       </li>
-      <li><a  href="ussdappointments"><i class='bx bx-box' ></i>
+      <li><a  href="#"><i class='bx bx-box' ></i>
             <span style="font-size: 70%;" class="links_name">USSD appointments</span>
           </a>
         </li>
-        <ul>
+         </ul>
         </li>
         
        
@@ -212,41 +214,28 @@ i{
     </div>
     
 
-    <div style="margin-left:280px;" class="container mt-4">
+    <div style="margin-left:400px;" class="container mt-4">
         <div class="row">
 
       
            <div class="col-md-12">
-                <h1>Appointments </h1>
-               <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for patient by name..">&nbsp; <i class="fas fa-search"></i>
+                <h1>Schedule</h1>
+               
                 
 
   
     <div class="card">
                       
     <div class="card-body">
+    <a href="<?= base_url('schedule')?>" class="btn btn-primary btn-sm float-end">EDIT SCHEDULE</a>
+</br></br></br>
     <table id="myTable" class="table table-bordered">
-  <thead>
-       <tr>
-      
-    <th>First name</th>   
-   
-  <th>Last name</th>   
- <th>Email</th>
-    <th>Appointment reason</th>
-    <th>Date scheduled</th>
-    <th>Gender</th>
-    <th>Status</th>
-    <th>Action</th>
 
-</tr>
-
-</thead>
 <tbody>
   <tr>
 <?php  
 
-  $rows=$appointments;
+  $rows=$schedule;
   ?>
  
 <?php foreach ($rows as $row): ?>
@@ -263,34 +252,14 @@ i{
 <?php
 
     }
-    if($key=='user_id')
-    {?>
-      
-      <td>
-          <div>
-          <a href="<?= site_url('appointments/approve/'.$value)?>"><button class='btn-success btn-sm' >Accept</button></a>
-      <a href="<?= site_url('appointments/reject/'.$value)?>"><button class='btn-danger btn-sm' >Reject</button></a>
-    </div>
-</td>
-
     
-    <?php
-  }
-    else{
+    
       ?><td><?php
       echo $value;
       ?>
       
     </td>
-      <?php
-    }
-  
 
-   
-  
-    
-?>
- 
 
 <?php endforeach;?>
 </tr>

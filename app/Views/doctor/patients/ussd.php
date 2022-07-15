@@ -157,17 +157,19 @@ i{
             <span class="links_name">Patients</span>
           </a>
           <ul>
-            <li><a href="#"><i class='bx bx-box' ></i>
+            <li><a href="patients"><i class='bx bx-box' ></i>
                     <span style="font-size: 70%;" class="links_name">Web patients</span>
                </a>
             </li>
-           <li><a  href="ussdpatients"><i class='bx bx-box' ></i>
+           <li><a  class="active"  href="#"><i class='bx bx-box' ></i>
                     <span style="font-size: 70%;" class="links_name">USSD patients</span>
                </a>
            </li>
         </ul>
         </li>
 </br></br></br></br>
+
+
         <li>
           <a href="#">
             <i class='bx bx-message' ></i>
@@ -189,11 +191,11 @@ i{
 
           </a>
           <ul>
-      <li><a class="active"  href="#"><i class='bx bx-box' ></i>
+      <li><a href="appointments"><i class='bx bx-box' ></i>
             <span style="font-size: 70%;" class="links_name">Web appointments</span>
            </a>
       </li>
-      <li><a  href="ussdappointments"><i class='bx bx-box' ></i>
+      <li><a  href="#"><i class='bx bx-box' ></i>
             <span style="font-size: 70%;" class="links_name">USSD appointments</span>
           </a>
         </li>
@@ -216,8 +218,8 @@ i{
         <div class="row">
 
       
-           <div class="col-md-12">
-                <h1>Appointments </h1>
+           <div style="margin-left:90px;" class="col-md-12">
+                <h1>Patients</h1>
                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for patient by name..">&nbsp; <i class="fas fa-search"></i>
                 
 
@@ -229,15 +231,12 @@ i{
   <thead>
        <tr>
       
-    <th>First name</th>   
+     
    
-  <th>Last name</th>   
- <th>Email</th>
-    <th>Appointment reason</th>
-    <th>Date scheduled</th>
-    <th>Gender</th>
-    <th>Status</th>
-    <th>Action</th>
+  <th>Name</th>   
+ <th>Phone</th>
+ <th>ID No</th>
+   
 
 </tr>
 
@@ -246,7 +245,7 @@ i{
   <tr>
 <?php  
 
-  $rows=$appointments;
+  $rows=$patients;
   ?>
  
 <?php foreach ($rows as $row): ?>
@@ -263,34 +262,14 @@ i{
 <?php
 
     }
-    if($key=='user_id')
-    {?>
-      
-      <td>
-          <div>
-          <a href="<?= site_url('appointments/approve/'.$value)?>"><button class='btn-success btn-sm' >Accept</button></a>
-      <a href="<?= site_url('appointments/reject/'.$value)?>"><button class='btn-danger btn-sm' >Reject</button></a>
-    </div>
-</td>
-
     
-    <?php
-  }
-    else{
+    
       ?><td><?php
       echo $value;
       ?>
       
     </td>
-      <?php
-    }
-  
 
-   
-  
-    
-?>
- 
 
 <?php endforeach;?>
 </tr>

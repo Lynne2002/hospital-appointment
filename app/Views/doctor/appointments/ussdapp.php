@@ -132,6 +132,7 @@ i{
 
 
 
+
       
     </style>
   
@@ -150,7 +151,6 @@ i{
             <span class="links_name">Dashboard</span>
           </a>
         </li>
-       
         <li>
           <a class href="#">
             <i class='bx bx-list-ul' ></i>
@@ -183,22 +183,28 @@ i{
           </a>
         </li>
         <li>
-          <a href="">
+          <a href=""class="active">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">Appointments</span>
 
           </a>
           <ul>
-      <li><a class="active"  href="#"><i class='bx bx-box' ></i>
+      <li><a  href="appointments"><i class='bx bx-box' ></i>
             <span style="font-size: 70%;" class="links_name">Web appointments</span>
            </a>
       </li>
-      <li><a  href="ussdappointments"><i class='bx bx-box' ></i>
+      <li><a class="active"  href="#"><i class='bx bx-box' ></i>
             <span style="font-size: 70%;" class="links_name">USSD appointments</span>
-          </a>
+</a>
         </li>
         <ul>
         </li>
+
+</br>
+       
+       
+       
+       
         
        
    
@@ -217,7 +223,7 @@ i{
 
       
            <div class="col-md-12">
-                <h1>Appointments </h1>
+                <h1>USSD Appointments </h1>
                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for patient by name..">&nbsp; <i class="fas fa-search"></i>
                 
 
@@ -229,13 +235,11 @@ i{
   <thead>
        <tr>
       
-    <th>First name</th>   
-   
-  <th>Last name</th>   
- <th>Email</th>
-    <th>Appointment reason</th>
+    <th>Name</th>     
+    <th>Phone number</th>
     <th>Date scheduled</th>
-    <th>Gender</th>
+    <th>Time</th>
+    <th>Appointment reason</th>
     <th>Status</th>
     <th>Action</th>
 
@@ -263,27 +267,28 @@ i{
 <?php
 
     }
-    if($key=='user_id')
-    {?>
-      
-      <td>
-          <div>
-          <a href="<?= site_url('appointments/approve/'.$value)?>"><button class='btn-success btn-sm' >Accept</button></a>
-      <a href="<?= site_url('appointments/reject/'.$value)?>"><button class='btn-danger btn-sm' >Reject</button></a>
-    </div>
-</td>
-
     
-    <?php
-  }
-    else{
+ 
       ?><td><?php
       echo $value;
       ?>
       
     </td>
-      <?php
-    }
+    <?php
+    if($key=='uid')
+    {?>
+      
+      <td>
+          <div>
+          <a href="<?= site_url('ussdappointments/approve/'.$value)?>"><button class='btn-success btn-sm' >Accept</button></a>
+      <a href="<?= site_url('ussdappointments/reject/'.$value)?>"><button class='btn-danger btn-sm' >Reject</button></a>
+    </div>
+</td>
+
+    
+   <?php
+  }
+    
   
 
    

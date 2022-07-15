@@ -6,9 +6,9 @@ use App\Models\scheduleModel;
  
 class bookAppointment extends BaseController {
 public function index($id){
-    $hospitals = new HospitalModel();
+    $appointments = new HospitalModel();
   
-    $data['hospitals']=$hospitals->find($id);
+    $data['hospitals']=$appointments->find($id);
     return view('bookApp', $data);
 
 }
@@ -96,28 +96,11 @@ public function store(){
 }
 }
 
+
 public function view($id){
-	/*
-$appointments = new appointmentsModel();
-	
-		$data = [
-		'first_name' => $this->request->getVar('first_name'),
-		'last_name' => $this->request->getVar('last_name'),
-		'phone' => $this->request->getVar('phone'),
-		'email' => $this->request->getVar('email'),
-		'date_scheduled' => $this->request->getVar('date_scheduled'),
-		];
-	
-	
-  
-   $appointment_id=$this->request->getVar('appointment_id');
-   $model->find($appointment_id, $data);
-    return json_encode('appointments/details', $model);
-*/
 	$appointments = new appointmentsModel();
-  
-    $data['appointments']=$appointments->find($id);
-    return view('appointments/details', $data);
+	$data['appointment']=$appointments->find($id);
+	return view('appointments/details', $data);
 
 }
 }

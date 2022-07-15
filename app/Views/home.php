@@ -78,9 +78,12 @@ $session = session('user');
                         </button>
 
                         <ul id="nav-menu">
+                       
                             <li><a href="#" class="active">Home</a></li>
+                     
+                            <li><?php foreach($users as $item ):?><a href="<?=base_url('appointments/history/'. $item['user_id'])?>">  <?php endforeach?>My appointments</a></li>
                             <li><a href="properties_view" target="_blank">About Us</a></li>
-                            <li><a href="agents_view">Blogs</a></li>
+                            
                            
                             <li><a href="contact">Contact Us</a></li>
                             <?php if( isset($_SESSION['first_name']) && !empty($_SESSION['first_name']) )
@@ -88,7 +91,7 @@ $session = session('user');
                                        ?>
                                  <div class="profile-details">
                                      <img src="/assets/Images/avatar.png" alt="">
-                                    <div class="admin_name"><?= session()->get('first_name') ?>&nbsp;<?= session()->get('last_name') ?></div>
+                                    <div class="admin_name"><?= session()->get('first_name') ?>&nbsp;</div>
                                     <i class='bx bx-chevron-down' ></i>
 		                             <a href="<?=base_url('Users/logout')?>" class="btn btn-primary btn-sm float-end" style="right:0;">Logout</a>
                                 </div>
@@ -97,7 +100,7 @@ $session = session('user');
                                      <a href="/register"><button class="btn-a">Register</button></a>
                                     <?php } ?>
                            
-                           
+                         
                             <li id="close-flyout"><span class="fas fa-times"></span></li>
                         </ul>
                     </nav>
